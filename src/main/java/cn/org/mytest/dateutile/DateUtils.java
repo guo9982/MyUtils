@@ -43,7 +43,7 @@ public class DateUtils {
      * @param endDate 结束日期 2020-04-01
      * @return Long 两个时间之间的间隔天数
      */
-    public static Long getDays122(String startDate, String endDate) {
+    public static Long getDays123(String startDate, String endDate) {
         LocalDate start = LocalDate.parse(startDate);
         LocalDate end = LocalDate.parse(endDate);
 
