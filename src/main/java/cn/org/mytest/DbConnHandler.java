@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.LinkedList;
+import java.util.concurrent.TimeUnit;
 
 public class DbConnHandler {
     private static final Logger logger = LoggerFactory.getLogger(DbConnHandler.class);
@@ -51,6 +52,22 @@ public class DbConnHandler {
             }
 
         }
+    }
+
+    /**
+     * 获取数据库连接
+     * @return 数据库连接
+     */
+    public synchronized Connection getConnection() {
+        while(dataSource.size() == 0) {
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        //检索并移除此列表的头元素(第一个元素)
+        return dataSource.poll();
     }
 
 }
