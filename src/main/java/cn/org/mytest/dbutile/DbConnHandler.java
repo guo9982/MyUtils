@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.concurrent.TimeUnit;
@@ -68,6 +69,44 @@ public class DbConnHandler {
         }
         //检索并移除此列表的头元素(第一个元素)
         return dataSource.poll();
+    }
+
+    /**
+     * 执行增删改SQL语句，返回影响的行数
+     * @param sql
+     * @param params
+     * @return 影响的行数
+     */
+    public int executeUpdate(String sql, Object[] params) {
+        int rtn = 0;
+        Connection conn = null;
+        PreparedStatement pstmt ;
+
+        try {
+            conn = getConnection();
+            conn.setAutoCommit(false);
+
+            pstmt = conn.prepareStatement(sql);
+
+            if(params != null && params.length > 0) {
+                for(int i = 0; i < params.length; i++) {
+                    pstmt.setObject(i + 1, params[i]);
+                }
+            }
+
+            rtn = pstmt.executeUpdate();
+
+            conn.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if(conn != null) {
+                dataSource.push(conn);
+            }
+
+        }
+
+        return rtn;
     }
 
 }
