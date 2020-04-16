@@ -1,4 +1,4 @@
-package cn.org.mytest;
+package cn.org.mytest.dbutile;
 
 import cn.org.mytest.conf.ConfigurationManager;
 import cn.org.mytest.constant.Constants;
@@ -35,7 +35,7 @@ public class DbConnHandler {
     }
 
     // 数据库连接池
-    private LinkedList<Connection> dataSource = new LinkedList<Connection>();
+    private LinkedList<Connection> dataSource = new LinkedList<>();
     private DbConnHandler(){
         int dataSourceSize = (Integer) ConfigurationManager.getStringProperty(Constants.JDBC_DATASOURCE_SIZE, "int");
         for (int i = 0; i < dataSourceSize; i++) {
