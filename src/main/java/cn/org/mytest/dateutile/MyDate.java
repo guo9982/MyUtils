@@ -21,8 +21,9 @@ public class MyDate {
         sb.append(year).append("年").append(month).append("月").append(day).append("日比今天");
         if (intYear > 0 || (intYear == 0 && intMonth > 0) || (intYear == 0 && intMonth == 0 && intDay > 0)) {
             sb.append("晚");
-        } else {
+        } else{
             sb.append("早");
+
         }
 
         sb.append(intYear).append("年").append(intMonth).append("月").append(intDay).append("日");
