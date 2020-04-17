@@ -19,13 +19,13 @@ public class MyDate {
         StringBuffer sb;
         sb = new StringBuffer();
         sb.append(year).append("年").append(month).append("月").append(day).append("日比今天");
-        if (intYear > 0) {
-            sb.append("晚").append(intYear).append("年").append(intMonth).append("月").append(intDay).append("日");
-        } else if (intYear == 0 && intMonth < 0){
-            sb.append("早").append(intYear).append("年").append(intMonth).append("月").append(intDay).append("日");
+        if (intYear > 0 || (intYear == 0 && intMonth > 0) || (intYear == 0 && intMonth == 0 && intDay > 0)) {
+            sb.append("晚");
+        } else {
+            sb.append("早");
         }
 
-
+        sb.append(intYear).append("年").append(intMonth).append("月").append(intDay).append("日");
         // 获取相隔天数
         return sb.toString();
     }
