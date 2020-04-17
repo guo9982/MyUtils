@@ -23,7 +23,6 @@ public class MyDate {
             sb.append("晚");
         } else{
             sb.append("早");
-
         }
 
         sb.append(intYear).append("年").append(intMonth).append("月").append(intDay).append("日");
