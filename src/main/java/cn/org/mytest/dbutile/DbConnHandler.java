@@ -5,10 +5,7 @@ import cn.org.mytest.constant.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.LinkedList;
 import java.util.concurrent.TimeUnit;
 
@@ -107,6 +104,54 @@ public class DbConnHandler {
         }
 
         return rtn;
+    }
+
+    /**
+     * 执行查询SQL语句
+     * @param sql
+     * @param params
+     * @param callback
+     */
+    public void executeQuery(String sql, Object[] params,
+                             QueryCallback callback) {
+        Connection conn = null;
+        PreparedStatement pstmt ;
+        ResultSet rs ;
+
+        try {
+            conn = getConnection();
+            pstmt = conn.prepareStatement(sql);
+
+            if(params != null && params.length > 0) {
+                for(int i = 0; i < params.length; i++) {
+                    pstmt.setObject(i + 1, params[i]);
+                }
+            }
+
+            rs = pstmt.executeQuery();
+
+            callback.process(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if(conn != null) {
+                dataSource.push(conn);
+            }
+        }
+    }
+    /**
+     * 静态内部接口：查询回调接口
+     *
+     */
+    public interface QueryCallback {
+
+        /**
+         * 处理查询结果
+         * @param rs
+         * @throws Exception
+         */
+        void process(ResultSet rs) throws Exception;
+
     }
 
 }
