@@ -3,7 +3,7 @@ package cn.org.mytest.dateutile;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class MyDate {
+public class DateUtils {
     public static String getDays(int year,int month,int day) {
         // 获取当前时间
         LocalDate nowDate = LocalDate.now();
