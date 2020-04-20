@@ -12,4 +12,13 @@ public class StringUtils {
     public static boolean isEmpty(String str) {
         return str == null || "".equalsIgnoreCase(str);
     }
+
+    /**
+     * 判断字符串是否不为空。
+     * @param str
+     * @return
+     */
+    public static boolean isNotEmpty(String str) {
+        return str != null && !"".equals(str);
+    }
 }
