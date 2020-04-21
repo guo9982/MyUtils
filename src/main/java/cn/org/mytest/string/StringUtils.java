@@ -36,4 +36,15 @@ public class StringUtils {
         }
         return str;
     }
+
+    /**
+     * 补全两位数字
+     * @param str
+     * @return
+     */
+    public static String fulfuill(String str) {
+        if(str.length() == 1)
+            return "0" + str;
+        return str;
+    }
 }
