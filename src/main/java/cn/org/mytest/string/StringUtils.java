@@ -75,6 +75,15 @@ public class StringUtils {
         return str;
     }
 
+    /**
+     * 从拼接的字符串中给字段设置值
+     * @param str 字符串
+     * @param delimiter 分隔符
+     * @param field 字段名
+     * @param newFieldValue 新的field值
+     * @return 字段值
+     *  name=zhangsan|age=12
+     */
     public static String setFieldInConcatString(String str,
                                                 String delimiter,
                                                 String field,
