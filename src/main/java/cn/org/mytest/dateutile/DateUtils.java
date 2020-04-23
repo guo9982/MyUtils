@@ -6,9 +6,9 @@ import java.time.Period;
 public class DateUtils {
     /**
      * 获取两个日期之间的时间差
-     * @param year
-     * @param month
-     * @param day
+     * @param year 年份
+     * @param month 月份
+     * @param day 天
      * @return
      */
     public static String getDays(int year,int month,int day) {
@@ -35,6 +35,12 @@ public class DateUtils {
         sb.append(intYear).append("年").append(intMonth).append("月").append(intDay).append("日");
         // 获取相隔天数
         return sb.toString();
+    }
+    public static Long getDays(String startDate, String endDate) {
+        LocalDate start = LocalDate.parse(startDate);
+        LocalDate end = LocalDate.parse(endDate);
+
+        return Math.abs(start.toEpochDay() - end.toEpochDay());
     }
 
     /**
