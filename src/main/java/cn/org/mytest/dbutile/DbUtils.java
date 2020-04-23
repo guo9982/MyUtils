@@ -9,8 +9,8 @@ import java.sql.*;
 import java.util.LinkedList;
 import java.util.concurrent.TimeUnit;
 
-public class DbConnHandler {
-    private static final Logger logger = LoggerFactory.getLogger(DbConnHandler.class);
+public class DbUtils {
+    private static final Logger logger = LoggerFactory.getLogger(DbUtils.class);
 
     static {
         logger.info("加重数据库驱动！");
@@ -26,15 +26,15 @@ public class DbConnHandler {
      * 使用单例模式
      */
     private static class DbSub{
-        private static final DbConnHandler INSTANCE = new DbConnHandler();
+        private static final DbUtils INSTANCE = new DbUtils();
     }
-    public static DbConnHandler getInstance() {
+    public static DbUtils getInstance() {
         return DbSub.INSTANCE;
     }
 
     // 数据库连接池
     private LinkedList<Connection> dataSource = new LinkedList<>();
-    private DbConnHandler(){
+    private DbUtils(){
         int dataSourceSize = (Integer) ConfigurationManager.getStringProperty(Constants.JDBC_DATASOURCE_SIZE, "int");
         for (int i = 0; i < dataSourceSize; i++) {
 
