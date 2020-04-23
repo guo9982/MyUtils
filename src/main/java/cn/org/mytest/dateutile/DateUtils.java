@@ -4,6 +4,13 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class DateUtils {
+    /**
+     * 获取两个日期之间的时间差
+     * @param year
+     * @param month
+     * @param day
+     * @return
+     */
     public static String getDays(int year,int month,int day) {
         // 获取当前时间
         LocalDate nowDate = LocalDate.now();
@@ -28,5 +35,13 @@ public class DateUtils {
         sb.append(intYear).append("年").append(intMonth).append("月").append(intDay).append("日");
         // 获取相隔天数
         return sb.toString();
+    }
+
+    /**
+     * 获取当天日期
+     * @return
+     */
+    public static String getTodayDate() {
+        return String.valueOf(LocalDate.now());
     }
 }
