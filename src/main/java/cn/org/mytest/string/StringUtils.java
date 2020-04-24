@@ -5,20 +5,6 @@ package cn.org.mytest.string;
  */
 public class StringUtils {
 
-    /**
-     * 截断字符串两侧的逗号
-     * @param str 字符串
-     * @return 字符串
-     */
-    public static String trimComma(String str) {
-        if(str.startsWith(",")) {
-            str = str.substring(1);
-        }
-        if(str.endsWith(",")) {
-            str = str.substring(0, str.length() - 1);
-        }
-        return str;
-    }
 
     /**
      * 从拼接的字符串中提取字段
