@@ -8,17 +8,6 @@ public class StringUtils {
 
 
     /**
-     * 补全两位数字
-     * @param str
-     * @return
-     */
-    public static String fulfuill(String str) {
-        if(str.length() == 1)
-            return "0" + str;
-        return str;
-    }
-
-    /**
      * 从拼接的字符串中给字段设置值
      * @param str 字符串
      * @param delimiter 分隔符
