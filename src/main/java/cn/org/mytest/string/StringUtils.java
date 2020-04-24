@@ -5,16 +5,6 @@ package cn.org.mytest.string;
  */
 public class StringUtils {
 
-
-    /**
-     * 判断字符串是否不为空。
-     * @param str
-     * @return
-     */
-    public static boolean isNotEmpty(String str) {
-        return str != null && !"".equals(str);
-    }
-
     /**
      * 截断字符串两侧的逗号
      * @param str 字符串
