@@ -38,4 +38,31 @@ public class StringUtils {
         return str;
     }
 
+    /**
+     * 从拼接的字符串中提取字段
+     * @param str 字符串
+     * @param delimiter 分隔符
+     * @param field 字段
+     * @return 字段值
+     * name=zhangsan|age=18
+     */
+    public static String getFieldFromConcatString(String str,String delimiter, String field) {
+        try {
+            String[] fields = str.split(delimiter);
+            for(String concatField : fields) {
+                // searchKeywords=|clickCategoryIds=1,2,3
+                if(concatField.split("=").length == 2) {
+                    String fieldName = concatField.split("=")[0];
+                    String fieldValue = concatField.split("=")[1];
+                    if(fieldName.equals(field)) {
+                        return fieldValue;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
