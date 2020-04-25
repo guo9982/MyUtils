@@ -114,4 +114,8 @@ public class StringUtils {
         return buffer.toString();
     }
 
+    public static String getStrWithLength(int len) {
+
+        return "";
+    }
 }
