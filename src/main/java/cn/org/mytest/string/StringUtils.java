@@ -1,5 +1,7 @@
 package cn.org.mytest.string;
 
+import java.util.Random;
+
 /**
  * 字符串工具类
  */
@@ -115,6 +117,10 @@ public class StringUtils {
     }
 
     public static String getStrWithLength(int len) {
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder();
+
+
 
         return "";
     }
