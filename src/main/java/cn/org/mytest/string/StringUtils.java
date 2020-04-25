@@ -120,8 +120,13 @@ public class StringUtils {
         Random random = new Random();
         StringBuilder sb = new StringBuilder();
 
+        String charStr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int charLength = charStr.length();
 
+        for (int i = 0; i < len; i++) {
+            sb.append(charStr.charAt(random.nextInt(charLength)));
+        }
 
-        return "";
+        return sb.toString();
     }
 }
