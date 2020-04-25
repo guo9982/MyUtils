@@ -116,6 +116,11 @@ public class StringUtils {
         return buffer.toString();
     }
 
+    /**
+     * 获取指定长度的数字，大写字母混合字符串。
+     * @param len 字符串长度
+     * @return String
+     */
     public static String getStrWithLength(int len) {
         Random random = new Random();
         StringBuilder sb = new StringBuilder();
