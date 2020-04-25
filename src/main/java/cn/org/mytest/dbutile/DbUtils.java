@@ -105,6 +105,42 @@ public class DbUtils {
 
         return rtn;
     }
+
+
+
+    /**
+     * 执行查询SQL语句
+     * @param sql
+     * @param params
+     * @param callback
+     */
+    public void executeQuery(String sql, Object[] params,
+                             QueryCallback callback) {
+        Connection conn = null;
+        PreparedStatement pstmt ;
+        ResultSet rs ;
+
+        try {
+            conn = getConnection();
+            pstmt = conn.prepareStatement(sql);
+
+            if(params != null && params.length > 0) {
+                for(int i = 0; i < params.length; i++) {
+                    pstmt.setObject(i + 1, params[i]);
+                }
+            }
+
+            rs = pstmt.executeQuery();
+
+            callback.process(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if(conn != null) {
+                dataSource.push(conn);
+            }
+        }
+    }
     /**
      * 静态内部接口：查询回调接口
      *
