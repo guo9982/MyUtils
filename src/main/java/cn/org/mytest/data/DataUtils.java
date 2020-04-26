@@ -1,11 +1,12 @@
 package cn.org.mytest.data;
 
 import cn.org.mytest.dateutile.DateUtils;
+import cn.org.mytest.string.StringUtils;
 
 import java.util.Random;
 
 public class DataUtils {
-    public static void moke() {
+    public static void moke(int len) {
         Random random = new Random();
         // 大陆地区
         String[] locations = new String[]
@@ -18,5 +19,11 @@ public class DataUtils {
                         "陕", "甘", "青", "内蒙古", "桂", "宁", "新", "藏"};
         // 获取今天日期
         String todayDate = DateUtils.getTodayDate();
+
+        for (int i = 0; i < len; i++) {
+            String car = locations[(random.nextInt(locations.length))] + (char) (65 + random.nextInt(26)) + StringUtils.getStrWithLength(5);
+
+        }
+
     }
 }
