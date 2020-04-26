@@ -1,10 +1,11 @@
 package cn.org.mytest;
 
-import cn.org.mytest.dateutile.DateUtils;
+import cn.org.mytest.data.DataUtils;
 import org.junit.Test;
 
-import java.time.LocalDate;
-
 public class Test1 {
-
+    @Test
+    public void test1() {
+        DataUtils.moke(10);
+    }
 }
