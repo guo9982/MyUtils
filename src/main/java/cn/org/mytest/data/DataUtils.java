@@ -2,10 +2,15 @@ package cn.org.mytest.data;
 
 import cn.org.mytest.dateutile.DateUtils;
 import cn.org.mytest.string.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Random;
 
 public class DataUtils {
+
+    private static final Logger logger = LoggerFactory.getLogger(DataUtils.class);
+
     public static void moke(int len) {
         Random random = new Random();
         // 大陆地区
@@ -22,6 +27,9 @@ public class DataUtils {
 
         for (int i = 0; i < len; i++) {
             String car = locations[(random.nextInt(locations.length))] + (char) (65 + random.nextInt(26)) + StringUtils.getStrWithLength(5);
+
+            String baseActionTime = todayDate + " " + StringUtils.fulfuill(random.nextInt(24)+"");
+
 
         }
 
