@@ -78,11 +78,19 @@ public class StringUtils {
         return str;
     }
 
+    /**
+     * 自动补全指定长度的字符串。
+     * @param str 需要处理的字符串。
+     * @param len 输出的字符串长度。
+     * @return
+     */
     public static String getStrWithLength(String str, int len) {
-        if (str.length() <= len) {
-
+        StringBuilder sb = new StringBuilder();
+        sb.append(str);
+        while (sb.length() < len) {
+            sb.insert(0, "0");
         }
-        return str;
+        return sb.toString();
     }
 
     /**
