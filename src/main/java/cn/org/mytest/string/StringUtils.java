@@ -78,6 +78,13 @@ public class StringUtils {
         return str;
     }
 
+    public static String getStrWithLength(String str, int len) {
+        if (str.length() <= len) {
+
+        }
+        return str;
+    }
+
     /**
      * 从拼接的字符串中给字段设置值
      * @param str 字符串
