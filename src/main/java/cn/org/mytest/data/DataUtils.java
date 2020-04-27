@@ -36,7 +36,7 @@ public class DataUtils {
              */
             for (int j = 0; j < random.nextInt(300) + 1; j++) {
                 // 区域id
-//                String areaId = StringUtils.fulfuill();
+                String areaId = StringUtils.fulfuill(random.nextInt(8)+"");
             }
 
         }
