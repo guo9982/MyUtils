@@ -30,6 +30,14 @@ public class DataUtils {
 
             String baseActionTime = todayDate + " " + StringUtils.fulfuill(random.nextInt(24)+"");
 
+            logger.info(baseActionTime +"###"+ car);
+            /*
+             * 此处的代码模拟车辆行驶轨迹
+             */
+            for (int j = 0; j < random.nextInt(300) + 1; j++) {
+                // 区域id
+//                String areaId = StringUtils.fulfuill();
+            }
 
         }
 
