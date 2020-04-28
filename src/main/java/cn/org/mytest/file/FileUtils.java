@@ -8,7 +8,7 @@ public class FileUtils {
         File srcFile = new File(src);
         if (srcFile.exists()) {
             if (srcFile.isFile()) {
-                result = "";
+
             }
         } else {
             result = "源文件不存在！";
