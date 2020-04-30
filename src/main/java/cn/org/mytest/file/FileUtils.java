@@ -9,12 +9,17 @@ import java.nio.file.StandardOpenOption;
 
 public class FileUtils {
     public static String copyFile(String srcPathStr,String desPathStr) throws IOException {
-        String result = "error";
+        String result;
         File srcFile = new File(srcPathStr);
         if (!srcFile.exists()) {
-            result = "源文件不存在";
+            result = "ERROR";
         } else {
-            FileChannel.open(Paths.get(srcPathStr), StandardOpenOption.READ);
+            FileChannel srcChannel = FileChannel.open(Paths.get(srcPathStr), StandardOpenOption.READ);
+            FileChannel desChannel = FileChannel.open(Paths.get(desPathStr), StandardOpenOption.READ, StandardOpenOption.WRITE, StandardOpenOption.CREATE);
+            srcChannel.transferTo(0, srcChannel.size(), desChannel);
+            srcChannel.close();
+            desChannel.close();
+            result = "SUCCESS";
         }
 
         return result;
