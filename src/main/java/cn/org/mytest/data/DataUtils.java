@@ -36,7 +36,11 @@ public class DataUtils {
              */
             for (int j = 0; j < random.nextInt(300) + 1; j++) {
                 // 区域id
-                String areaId = StringUtils.fulfuill(random.nextInt(8)+"");
+                String areaId = StringUtils.fulfuill(random.nextInt(15)+1+"");
+                // 道路id
+                String rowId = random.nextInt(50)+1+"";
+                // 摄像头id
+
             }
 
         }

@@ -36,6 +36,13 @@ public class DateUtils {
         // 获取相隔天数
         return sb.toString();
     }
+
+    /**
+     * 计算两个日期之间相差的天数
+     * @param startDate 开始日期 格式为 2020-04-01
+     * @param endDate 结束日期 2020-04-01
+     * @return Long 两个时间之间的间隔天数
+     */
     public static Long getDays(String startDate, String endDate) {
         LocalDate start = LocalDate.parse(startDate);
         LocalDate end = LocalDate.parse(endDate);
