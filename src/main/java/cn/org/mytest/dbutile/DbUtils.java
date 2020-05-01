@@ -114,7 +114,7 @@ public class DbUtils {
      * @param params
      * @param callback
      */
-    public void executeQuery1(String sql, Object[] params,
+    public void executeQuery(String sql, Object[] params,
                              QueryCallback callback) {
         Connection conn = null;
         PreparedStatement pstmt ;
