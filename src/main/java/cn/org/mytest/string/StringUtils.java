@@ -84,7 +84,7 @@ public class StringUtils {
      * @param len 输出的字符串长度。
      * @return
      */
-    public static String getStrWithLength1(String str, int len) {
+    public static String getStrWithLength(String str, int len) {
         StringBuilder sb = new StringBuilder();
         sb.append(str);
         while (sb.length() < len) {
