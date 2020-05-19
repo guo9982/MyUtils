@@ -74,7 +74,7 @@ public class DbUtils {
      * @param params
      * @return 影响的行数
      */
-    public int executeUpdate8(String sql, Object[] params) {
+    public int executeUpdate9(String sql, Object[] params) {
         int rtn = 0;
         Connection conn = null;
         PreparedStatement pstmt ;
