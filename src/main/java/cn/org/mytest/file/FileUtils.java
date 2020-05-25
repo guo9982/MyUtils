@@ -8,7 +8,7 @@ import java.nio.file.StandardOpenOption;
 
 
 public class FileUtils {
-    public static String copyFile0(String srcPathStr,String desPathStr) throws IOException {
+    public static String copyFile10(String srcPathStr,String desPathStr) throws IOException {
         String result;
         File srcFile = new File(srcPathStr);
         if (!srcFile.exists()) {
