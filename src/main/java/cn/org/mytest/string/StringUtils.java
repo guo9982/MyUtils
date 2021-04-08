@@ -13,7 +13,7 @@ public class StringUtils {
      * @param str
      * @return
      */
-    public static boolean isEmpty66(String str) {
+    public static boolean isEmpty67(String str) {
         return str == null || "".equalsIgnoreCase(str);
     }
 
