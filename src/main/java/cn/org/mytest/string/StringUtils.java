@@ -1,6 +1,9 @@
 package cn.org.mytest.string;
 
+import java.util.Queue;
 import java.util.Random;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  * 字符串工具类
@@ -34,6 +37,8 @@ public class StringUtils {
         if(str.startsWith(",")) {
             str = str.substring(1);
         }
+
+
         if(str.endsWith(",")) {
             str = str.substring(0, str.length() - 1);
         }
