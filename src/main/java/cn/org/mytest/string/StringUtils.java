@@ -1,5 +1,7 @@
 package cn.org.mytest.string;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -16,7 +18,7 @@ public class StringUtils {
      * @param str
      * @return
      */
-    public static boolean isEmpty95(String str) {
+    public static boolean isEmpty96(String str) {
         return str == null || "".equalsIgnoreCase(str);
     }
 
@@ -37,7 +39,6 @@ public class StringUtils {
         if(str.startsWith(",")) {
             str = str.substring(1);
         }
-
 
         if(str.endsWith(",")) {
             str = str.substring(0, str.length() - 1);
