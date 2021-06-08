@@ -18,7 +18,7 @@ public class StringUtils {
      * @param str
      * @return
      */
-    public static boolean isEmpty7(String str) {
+    public static boolean isEmpty8(String str) {
         return str == null || "".equalsIgnoreCase(str);
     }
 
