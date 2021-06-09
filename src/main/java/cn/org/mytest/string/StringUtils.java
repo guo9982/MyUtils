@@ -18,7 +18,7 @@ public class StringUtils {
      * @param str
      * @return
      */
-    public static boolean isEmpty19(String str) {
+    public static boolean isEmpty20(String str) {
         return str == null || "".equalsIgnoreCase(str);
     }
 
