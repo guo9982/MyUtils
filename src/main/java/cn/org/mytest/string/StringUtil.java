@@ -1,16 +1,11 @@
 package cn.org.mytest.string;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
 import java.util.Random;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  * 字符串工具类
  */
-public class StringUtils {
+public  class StringUtil {
 
 
     /**
