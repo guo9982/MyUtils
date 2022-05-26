@@ -13,6 +13,9 @@ public class ConfigurationManager {
 
     private static final Properties properties = new Properties();
 
+    /**
+     * 初始化的时候，加载一次配置
+     */
     static {
         logger.info("开始加重配置文件。。。");
         InputStream in = ConfigurationManager.class.getClassLoader().getResourceAsStream("conf.properties");
