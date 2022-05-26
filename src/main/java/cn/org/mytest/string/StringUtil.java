@@ -35,6 +35,7 @@ public  class StringUtil {
             str = str.substring(1);
         }
 
+        System.out.println("case");
 
         if(str.endsWith(",")) {
             str = str.substring(0, str.length() - 1);
