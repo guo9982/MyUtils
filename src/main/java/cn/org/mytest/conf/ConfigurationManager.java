@@ -80,4 +80,19 @@ public class ConfigurationManager {
         return 0L;
     }
 
+    /**
+     * 获取整数类型的配置项
+     * @param key
+     * @return value
+     */
+    public static Integer getInteger(String key) {
+        String value = getProperty(key);
+        try {
+            return Integer.valueOf(value);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
 }
