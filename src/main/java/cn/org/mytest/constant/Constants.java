@@ -10,6 +10,8 @@ public interface Constants {
     String JDBC_USER = "jdbc.user";
     String JDBC_PASSWORD = "jdbc.password";
 
+    String SPARK_LOCAL = "spark.local";
+
     // 增加数据库类型
     String DB_TYPE = "DB_TYPE";
 
