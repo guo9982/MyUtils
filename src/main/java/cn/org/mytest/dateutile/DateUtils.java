@@ -1,17 +1,24 @@
 package cn.org.mytest.dateutile;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 
 public class DateUtils {
+
+    public static final SimpleDateFormat TIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+    public static final SimpleDateFormat DATEKEY_FORMAT = new SimpleDateFormat("yyyyMMdd");
+
     /**
      * 获取两个日期之间的时间差
-     * @param year 年份
+     *
+     * @param year  年份
      * @param month 月份
-     * @param day 天
+     * @param day   天
      * @return
      */
-    public static String getDays(int year,int month,int day) {
+    public static String getDays(int year, int month, int day) {
         // 获取当前时间
         LocalDate nowDate = LocalDate.now();
         // 构建指定日期
@@ -28,7 +35,7 @@ public class DateUtils {
         sb.append(year).append("年").append(month).append("月").append(day).append("日比今天");
         if (intYear > 0 || (intYear == 0 && intMonth > 0) || (intYear == 0 && intMonth == 0 && intDay > 0)) {
             sb.append("晚");
-        } else{
+        } else {
             sb.append("早");
         }
 
@@ -39,8 +46,9 @@ public class DateUtils {
 
     /**
      * 计算两个日期之间相差的天数
+     *
      * @param startDate 开始日期 格式为 2020-04-01
-     * @param endDate 结束日期 2020-04-01
+     * @param endDate   结束日期 2020-04-01
      * @return Long 两个时间之间的间隔天数
      */
     public static Long getDays(String startDate, String endDate) {
@@ -52,6 +60,7 @@ public class DateUtils {
 
     /**
      * 获取当天日期
+     *
      * @return
      */
     public static String getTodayDate() {
