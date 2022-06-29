@@ -23,8 +23,8 @@ public class DateUtils {
         int intMonth = period.getMonths();
         int intDay = period.getDays();
 
-        StringBuffer sb;
-        sb = new StringBuffer();
+        StringBuilder sb;
+        sb = new StringBuilder();
         sb.append(year).append("年").append(month).append("月").append(day).append("日比今天");
         if (intYear > 0 || (intYear == 0 && intMonth > 0) || (intYear == 0 && intMonth == 0 && intDay > 0)) {
             sb.append("晚");
@@ -43,7 +43,7 @@ public class DateUtils {
      * @param endDate 结束日期 2020-04-01
      * @return Long 两个时间之间的间隔天数
      */
-    public static Long getDays29(String startDate, String endDate) {
+    public static Long getDays(String startDate, String endDate) {
         LocalDate start = LocalDate.parse(startDate);
         LocalDate end = LocalDate.parse(endDate);
 
