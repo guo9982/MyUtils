@@ -33,9 +33,10 @@ public class DbUtils {
     }
 
     // 数据库连接池
-    private LinkedList<Connection> dataSource = new LinkedList<>();
+    private final LinkedList<Connection> dataSource = new LinkedList<>();
     private DbUtils(){
         int dataSourceSize = (Integer) ConfigurationManager.getStringProperty(Constants.JDBC_DATASOURCE_SIZE, "int");
+        logger.info("创建数据库连接池。");
         for (int i = 0; i < dataSourceSize; i++) {
 
             String url = (String) ConfigurationManager.getStringProperty(Constants.JDBC_URL, "");
