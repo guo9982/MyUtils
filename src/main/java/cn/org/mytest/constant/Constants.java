@@ -10,4 +10,7 @@ public interface Constants {
     String JDBC_USER = "jdbc.user";
     String JDBC_PASSWORD = "jdbc.password";
 
+    // 增加数据库类型
+    String DB_TYPE = "DB_TYPE";
+
 }
