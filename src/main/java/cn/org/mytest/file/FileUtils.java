@@ -17,7 +17,7 @@ public class FileUtils {
         String result;
         File srcFile = new File(srcPathStr);
         if (!srcFile.exists()) {
-            logger.error("srcFile not exists");
+            logger.error("源文件不存在！");
             result = "ERROR";
         } else {
             FileChannel srcChannel = FileChannel.open(Paths.get(srcPathStr), StandardOpenOption.READ);
@@ -26,6 +26,7 @@ public class FileUtils {
             srcChannel.close();
             desChannel.close();
             result = "SUCCESS";
+            logger.info("文件复制成功！");
         }
 
         return result;
