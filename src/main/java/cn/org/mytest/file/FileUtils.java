@@ -1,5 +1,8 @@
 package cn.org.mytest.file;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
@@ -8,10 +11,13 @@ import java.nio.file.StandardOpenOption;
 
 
 public class FileUtils {
+
+    private static final Logger logger = LoggerFactory.getLogger(FileUtils.class);
     public static String copyFile17(String srcPathStr,String desPathStr) throws IOException {
         String result;
         File srcFile = new File(srcPathStr);
         if (!srcFile.exists()) {
+            logger.error("srcFile not exists");
             result = "ERROR";
         } else {
             FileChannel srcChannel = FileChannel.open(Paths.get(srcPathStr), StandardOpenOption.READ);

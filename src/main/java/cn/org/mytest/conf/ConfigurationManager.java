@@ -13,9 +13,9 @@ public class ConfigurationManager {
 
     private static final Properties properties = new Properties();
 
-    /**
-     * 初始化的时候，加载一次配置
-     * 采用静态模式进行加载
+    /*
+      初始化的时候，加载一次配置
+      采用静态模式进行加载
      */
     static {
         logger.info("开始加重配置文件。。。");
@@ -25,7 +25,6 @@ public class ConfigurationManager {
             logger.info("配置文件加重完成！");
         } catch (IOException e) {
             e.printStackTrace();
-            logger.error(e);
         }
     }
 

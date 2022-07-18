@@ -1,11 +1,18 @@
 package cn.org.mytest.string;
 
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Random;
 
 /**
  * 字符串工具类
  */
 public  class StringUtil {
+
+    private static final Logger logger = LoggerFactory.getLogger(StringUtil.class);
 
 
     /**
@@ -80,8 +87,8 @@ public  class StringUtil {
             return "0" + str;
         return str;
 
-        /**
-         * 这事啊，谁知道呢？
+        /*
+          这事啊，谁知道呢？
          */
     }
 
