@@ -1,6 +1,6 @@
-package cn.org.mytest.conf;
+package org.mytest.conf;
 
-import cn.org.mytest.constant.Constants;
+import org.mytest.constant.Constants;
 
 public class ParamUtils {
     /**

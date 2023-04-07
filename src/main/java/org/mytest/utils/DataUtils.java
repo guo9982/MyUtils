@@ -1,4 +1,4 @@
-package cn.org.mytest.utils;
+package org.mytest.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

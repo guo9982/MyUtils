@@ -1,4 +1,4 @@
-package cn.org.mytest.constant;
+package org.mytest.constant;
 
 public interface Constants {
     /**
