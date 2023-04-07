@@ -1,4 +1,4 @@
-package cn.org.mytest.conf;
+package org.mytest.conf;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

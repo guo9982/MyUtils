@@ -1,7 +1,7 @@
-package cn.org.mytest.utils;
+package org.mytest.utils;
 
-import cn.org.mytest.conf.ConfigurationManager;
-import cn.org.mytest.constant.Constants;
+import org.mytest.conf.ConfigurationManager;
+import org.mytest.constant.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
