@@ -1,4 +1,4 @@
-package cn.org.mytest.dbutile;
+package cn.org.mytest.dbUtile;
 
 import cn.org.mytest.conf.ConfigurationManager;
 import cn.org.mytest.constant.Constants;
