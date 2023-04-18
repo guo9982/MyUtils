@@ -3,17 +3,32 @@ package cn.org.mytest.fileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.imageio.stream.FileImageInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.nio.channels.FileChannel;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 
 public class FileUtils {
 
     private static final Logger logger = LoggerFactory.getLogger(FileUtils.class);
-    public static String copyFile17(String srcPathStr,String desPathStr) throws IOException {
+
+    /**
+     * 拷贝文件
+     *
+     * @param srcPathStr 源文件地址。
+     * @param desPathStr 目标文件地址。
+     * @return
+     * @throws IOException
+     */
+    public static String copyFile17(String srcPathStr, String desPathStr) throws IOException {
         String result;
         File srcFile = new File(srcPathStr);
         if (!srcFile.exists()) {
@@ -30,5 +45,38 @@ public class FileUtils {
         }
 
         return result;
+    }
+
+    /**
+     * 获取文件的MD5值
+     * @param strFilePath 文件地址。
+     * @return
+     */
+    public static String getFileMD5code(String strFilePath) {
+        // 输入合理性检查
+        if (strFilePath == null || strFilePath.equalsIgnoreCase("")) {
+            return null;
+        }
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            FileInputStream stream = new FileInputStream(strFilePath);
+            byte[] bytes = new byte[1024];
+            int length = -1;
+            while ((length = stream.read(bytes, 0, 1024)) != -1) {
+                md.update(bytes, 0, length);
+            }
+            stream.close();
+            byte[] digest = md.digest();
+            BigInteger bigInteger = new BigInteger(1, digest);
+            return bigInteger.toString(16);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }finally {
+
+        }
     }
 }
