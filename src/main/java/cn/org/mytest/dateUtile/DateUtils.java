@@ -1,4 +1,4 @@
-package cn.org.mytest.dateutile;
+package cn.org.mytest.dateUtile;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;

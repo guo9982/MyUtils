@@ -1,4 +1,4 @@
-package cn.org.mytest.redisutile;
+package cn.org.mytest.redisUtile;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

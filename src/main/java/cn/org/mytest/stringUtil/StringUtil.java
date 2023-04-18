@@ -1,4 +1,4 @@
-package cn.org.mytest.string;
+package cn.org.mytest.stringUtil;
 
 
 import org.slf4j.Logger;

@@ -1,7 +1,7 @@
 package cn.org.mytest.data;
 
-import cn.org.mytest.dateutile.DateUtils;
-import cn.org.mytest.string.StringUtil;
+import cn.org.mytest.dateUtile.DateUtils;
+import cn.org.mytest.stringUtil.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
