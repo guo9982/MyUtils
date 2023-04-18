@@ -1,4 +1,4 @@
-package cn.org.mytest.dbutile;
+package cn.org.mytest.redisutile;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
