@@ -3,6 +3,7 @@ package cn.org.mytest.utils;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtils {
@@ -13,6 +14,7 @@ public class DateUtils {
 
     /**
      * 判断一个时间是否在另一个时间之前
+     *
      * @param time1 第一个时间
      * @param time2 第二个时间
      * @return 判断结果
@@ -22,7 +24,7 @@ public class DateUtils {
             Date dateTime1 = TIME_FORMAT.parse(time1);
             Date dateTime2 = TIME_FORMAT.parse(time2);
 
-            if(dateTime1.before(dateTime2)) {
+            if (dateTime1.before(dateTime2)) {
                 return true;
             }
         } catch (Exception e) {
@@ -86,5 +88,40 @@ public class DateUtils {
      */
     public static String getTodayDate() {
         return String.valueOf(LocalDate.now());
+    }
+
+    /**
+     * 获取昨天的日期（yyyy-MM-dd）
+     *
+     * @return 昨天的日期
+     */
+    public static String getYesterdayDate() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.DAY_OF_YEAR, -1);
+
+        Date date = cal.getTime();
+
+        return DATE_FORMAT.format(date);
+    }
+
+    /**
+     * 格式化日期（yyyy-MM-dd）
+     *
+     * @param date Date对象
+     * @return 格式化后的日期
+     */
+    public static String formatDate(Date date) {
+        return DATE_FORMAT.format(date);
+    }
+
+    /**
+     * 格式化时间（yyyy-MM-dd HH:mm:ss）
+     *
+     * @param date Date对象
+     * @return 格式化后的时间
+     */
+    public static String formatTime(Date date) {
+        return TIME_FORMAT.format(date);
     }
 }
