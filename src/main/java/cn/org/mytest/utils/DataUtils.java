@@ -1,7 +1,5 @@
-package cn.org.mytest.data;
+package cn.org.mytest.utils;
 
-import cn.org.mytest.dateUtile.DateUtils;
-import cn.org.mytest.stringUtil.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,9 +24,9 @@ public class DataUtils {
         String todayDate = DateUtils.getTodayDate();
 
         for (int i = 0; i < len; i++) {
-            String car = locations[(random.nextInt(locations.length))] + (char) (65 + random.nextInt(26)) + StringUtil.getStrWithLength(10);
+            String car = locations[(random.nextInt(locations.length))] + (char) (65 + random.nextInt(26)) + StringUtils.getStrWithLength(10);
 
-            String baseActionTime = todayDate + " " + StringUtil.fulfuill(random.nextInt(24)+"");
+            String baseActionTime = todayDate + " " + StringUtils.fulfuill(random.nextInt(24)+"");
 
             logger.info(baseActionTime +"###"+ car);
             /*
@@ -36,7 +34,7 @@ public class DataUtils {
              */
             for (int j = 0; j < random.nextInt(300) + 1; j++) {
                 // 区域id
-                String areaId = StringUtil.fulfuill(random.nextInt(15)+1+"");
+                String areaId = StringUtils.fulfuill(random.nextInt(15)+1+"");
                 // 道路id
                 String rowId = random.nextInt(50)+1+"";
                 // 摄像头id

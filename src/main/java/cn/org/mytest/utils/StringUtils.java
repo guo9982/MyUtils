@@ -1,4 +1,4 @@
-package cn.org.mytest.stringUtil;
+package cn.org.mytest.utils;
 
 
 import org.slf4j.Logger;
@@ -9,9 +9,9 @@ import java.util.Random;
 /**
  * 字符串工具类
  */
-public class StringUtil {
+public class StringUtils {
 
-    private static final Logger logger = LoggerFactory.getLogger(StringUtil.class);
+    private static final Logger logger = LoggerFactory.getLogger(StringUtils.class);
 
 
     /**
