@@ -4,6 +4,8 @@ package cn.org.mytest.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -11,24 +13,21 @@ import java.util.Random;
  */
 public class StringUtils {
 
-    private static final Logger logger = LoggerFactory.getLogger(StringUtils.class);
-
-
     /**
-     * 检查字符串是否为空
+     * 判断字符串是否为空
      *
-     * @param str
-     * @return
+     * @param str 字符串
+     * @return 是否为空
      */
     public static boolean isEmpty(String str) {
-        return str == null || "".equalsIgnoreCase(str);
+        return str == null || "".equals(str);
     }
 
     /**
-     * 判断字符串是否不为空。
+     * 判断字符串是否不为空
      *
-     * @param str
-     * @return
+     * @param str 字符串
+     * @return 是否不为空
      */
     public static boolean isNotEmpty(String str) {
         return str != null && !"".equals(str);
@@ -44,14 +43,45 @@ public class StringUtils {
         if (str.startsWith(",")) {
             str = str.substring(1);
         }
-
-        System.out.println("case");
-
         if (str.endsWith(",")) {
             str = str.substring(0, str.length() - 1);
         }
         return str;
     }
+
+    /**
+     * 补全两位数字
+     *
+     * @param str
+     * @return
+     */
+    public static String fulfuill(String str) {
+        if (str.length() == 1)
+            return "0" + str;
+        return str;
+    }
+
+
+    /**
+     * 补全num位数字
+     * 将给定的字符串前面补0，使字符串的长度为num位。
+     *
+     * @param str
+     * @return "00102"
+     */
+    public static String fulfuill(int num, String str) {
+        if (str.length() == num) {
+            return str;
+        } else {
+            int fulNum = num - str.length();
+            String tmpStr = "";
+            for (int i = 0; i < fulNum; i++) {
+                tmpStr += "0";
+            }
+            return tmpStr + str;
+        }
+    }
+
 
     /**
      * 从拼接的字符串中提取字段
@@ -81,37 +111,6 @@ public class StringUtils {
         return null;
     }
 
-    /**
-     * 补全两位数字
-     *
-     * @param str
-     * @return
-     */
-    public static String fulfuill(String str) {
-        if (str.length() == 1)
-            return "0" + str;
-        return str;
-
-        /*
-          这事啊，谁知道呢？
-         */
-    }
-
-    /**
-     * 自动补全指定长度的字符串。
-     *
-     * @param str 需要处理的字符串。
-     * @param len 输出的字符串长度。
-     * @return
-     */
-    public static String getStrWithLength(String str, int len) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(str);
-        while (sb.length() < len) {
-            sb.insert(0, "0");
-        }
-        return sb.toString();
-    }
 
     /**
      * 从拼接的字符串中给字段设置值
@@ -141,7 +140,7 @@ public class StringUtils {
             }
         }
 
-        StringBuilder buffer = new StringBuilder();
+        StringBuffer buffer = new StringBuffer("");
         for (int i = 0; i < fields.length; i++) {
             buffer.append(fields[i]);
             if (i < fields.length - 1) {
@@ -153,22 +152,47 @@ public class StringUtils {
     }
 
     /**
-     * 获取指定长度的数字，大写字母混合字符串。
+     * 给定字符串和分隔符，返回一个K,V map
      *
-     * @param len 字符串长度
-     * @return String
+     * @param str
+     * @param delimiter
+     * @return map<String, String>
+     * <p>
+     * name=zhangsan|age=18
+     * age=18
      */
-    public static String getStrWithLength(int len) {
-        Random random = new Random();
-        StringBuilder sb = new StringBuilder();
-
-        String charStr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        int charLength = charStr.length();
-
-        for (int i = 0; i < len; i++) {
-            sb.append(charStr.charAt(random.nextInt(charLength)));
+    public static Map<String, String> getKeyValuesFromConcatString(String str, String delimiter) {
+        Map<String, String> map = new HashMap<>();
+        try {
+            String[] fields = str.split(delimiter);
+            for (String concatField : fields) {
+                // searchKeywords=|clickCategoryIds=1,2,3
+                if (concatField.split("=").length == 2) {
+                    String fieldName = concatField.split("=")[0];
+                    String fieldValue = concatField.split("=")[1];
+                    map.put(fieldName, fieldValue);
+                }
+            }
+            return map;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return null;
+    }
 
-        return sb.toString();
+    /**
+     * String 字符串转Integer数字
+     *
+     * @param str
+     * @return
+     */
+    public static Integer convertStringtoInt(String str) {
+        try {
+            return Integer.parseInt(str);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+
     }
 }
