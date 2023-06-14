@@ -44,4 +44,8 @@ public class DataUtils {
         }
 
     }
+
+    public void test() {
+
+    }
 }
