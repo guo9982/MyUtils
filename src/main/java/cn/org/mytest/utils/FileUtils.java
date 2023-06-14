@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.channels.FileChannel;
@@ -68,14 +67,11 @@ public class FileUtils {
             byte[] digest = md.digest();
             BigInteger bigInteger = new BigInteger(1, digest);
             return bigInteger.toString(16);
-        } catch (NoSuchAlgorithmException e) {
+        } catch (NoSuchAlgorithmException | IOException e) {
             throw new RuntimeException(e);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }finally {
+        } finally {
 
         }
     }
+
 }
