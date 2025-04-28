@@ -15,8 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@InterfaceAudience.LimitedPrivate({"Common", "Avro", "Chukwa", "HBase", "HDFS",
-  "Hive", "MapReduce", "Pig", "ZooKeeper"})
-package org.apache.hadoop.classification.tools;
+
+/**
+ * Provides the server-side framework for authentication.
+ */
+@InterfaceAudience.LimitedPrivate({ "HBase", "HDFS", "MapReduce" })
+@InterfaceStability.Evolving
+package org.apache.hadoop.security.authentication.server;
 
 import org.apache.hadoop.classification.InterfaceAudience;
+import org.apache.hadoop.classification.InterfaceStability;
